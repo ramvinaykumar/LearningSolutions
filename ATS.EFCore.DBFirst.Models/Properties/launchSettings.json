@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ATS.EFCore.DBFirst.Models": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53861;http://localhost:53862"
+    }
+  }
+}
