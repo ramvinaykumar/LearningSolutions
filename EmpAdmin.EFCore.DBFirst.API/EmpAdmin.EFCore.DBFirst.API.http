@@ -1,0 +1,6 @@
+@EmpAdmin.EFCore.DBFirst.API_HostAddress = http://localhost:5224
+
+GET {{EmpAdmin.EFCore.DBFirst.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

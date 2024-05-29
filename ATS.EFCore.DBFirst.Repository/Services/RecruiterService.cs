@@ -85,5 +85,15 @@ namespace ATS.EFCore.DBFirst.Repository.Services
         {
             throw new NotImplementedException();
         }
+
+        public RecruiterDTO GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

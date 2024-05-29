@@ -1,0 +1,6 @@
+@WebApi.AuditTrial_HostAddress = http://localhost:5048
+
+GET {{WebApi.AuditTrial_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
