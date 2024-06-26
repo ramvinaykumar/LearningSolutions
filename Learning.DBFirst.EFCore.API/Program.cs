@@ -1,4 +1,6 @@
 using Learning.DBFirst.EFCore.API.Data;
+using Learning.DBFirst.EFCore.API.Repository.Interface;
+using Learning.DBFirst.EFCore.API.Repository.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +28,7 @@ builder.Services.AddDbContextPool<MyDbContext>((serviceProvider, optionsBuilder)
 });
 
 // Add services to the container.
-
+builder.Services.AddScoped<ICake, CakeDataService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

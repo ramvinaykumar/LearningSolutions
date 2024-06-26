@@ -168,6 +168,14 @@ namespace DownloadPdf
             string randomEmail = GenerateRandomEmail();
             Console.WriteLine("Random Email Address: " + randomEmail);
 
+            var result = LongestPalindromicSubstring("abracecars");
+            Console.WriteLine("LongestPalindromicSubstring: " + result); // 
+
+            string input1 = "hellosannasmith";
+            string input2 = "abcdefgg";
+            Console.WriteLine(LongestPalindromicSubstring(input1)); // Output: sannas
+            Console.WriteLine(LongestPalindromicSubstring(input2)); // Output: none
+
             Console.ReadLine();
         }
 
@@ -206,6 +214,97 @@ namespace DownloadPdf
             
             DateTime dateTime = DateTime.SpecifyKind(DateTime.Now.AddHours(8.0), DateTimeKind.Unspecified);
             return new DateTimeOffset(dateTime, TimeSpan.FromHours(8.0));
+        }
+
+        public static int LongestPalindrome(string seq)
+        {
+            int Longest = 0;
+            List<int> l = new List<int>();
+            int i = 0;
+            int palLen = 0;
+            int s = 0;
+            int e = 0;
+            while (i < seq.Length)
+            {
+                if (i > palLen && seq[i - palLen - 1] == seq[i])
+                {
+                    palLen += 2;
+                    i += 1;
+                    continue;
+                }
+                l.Add(palLen);
+                Longest = Math.Max(Longest, palLen);
+                s = l.Count - 2;
+                e = s - palLen;
+                bool found = false;
+                for (int j = s; j > e; j--)
+                {
+                    int d = j - e - 1;
+                    if (l[j] == d)
+                    {
+                        palLen = d;
+                        found = true;
+                        break;
+                    }
+                    l.Add(Math.Min(d, l[j]));
+                }
+                if (!found)
+                {
+                    palLen = 1;
+                    i += 1;
+                }
+            }
+            l.Add(palLen);
+            Longest = Math.Max(Longest, palLen);
+            return Longest;
+        }
+
+        public static string LongestPalindromicSubstring(string s)
+        {
+            int n = s.Length;
+            if (n == 0) return "none";
+
+            bool[,] dp = new bool[n, n];
+            int start = 0;
+            int maxLength = 1;
+
+            // All substrings of length 1 are palindromes
+            for (int i = 0; i < n; ++i)
+                dp[i, i] = true;
+
+            // Check for substrings of length 1
+            for (int i = 0; i < n - 1; ++i)
+            {
+                if (s[i] == s[i + 1])
+                {
+                    dp[i, i + 1] = true;
+                    start = i;
+                    maxLength = 1;
+                }
+            }
+
+            // Check for lengths greater than 2
+            for (int length = 3; length <= n; ++length)
+            {
+                for (int i = 0; i < n - length + 1; ++i)
+                {
+                    int j = i + length - 1;
+                    if (s[i] == s[j] && dp[i + 1, j - 1])
+                    {
+                        dp[i, j] = true;
+                        if (length > maxLength)
+                        {
+                            start = i;
+                            maxLength = length;
+                        }
+                    }
+                }
+            }
+
+            // Return "none" if the longest palindromic substring is of length 1
+            if (maxLength == 1) return "none";
+
+            return s.Substring(start, maxLength);
         }
     }
 
