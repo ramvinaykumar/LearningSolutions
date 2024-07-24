@@ -85,7 +85,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinWire.Console", "WinWire.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A8A802EC-9832-466F-885C-6858E7BC303E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.DBFirst.EFCore.API.Tests", "Learning.DBFirst.EFCore.API.Tests\Learning.DBFirst.EFCore.API.Tests.csproj", "{1D19602F-C7F8-4BF7-A131-AAAE949B450D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.DBFirst.EFCore.API.Tests", "Learning.DBFirst.EFCore.API.Tests\Learning.DBFirst.EFCore.API.Tests.csproj", "{1D19602F-C7F8-4BF7-A131-AAAE949B450D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

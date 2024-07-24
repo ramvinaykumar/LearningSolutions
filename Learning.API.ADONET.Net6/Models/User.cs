@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using System.Xml.Linq;
 
 namespace Learning.API.ADONET.Net6.Models
 {
@@ -9,16 +8,16 @@ namespace Learning.API.ADONET.Net6.Models
         public int Id { get; set; }
 
         [DataMember(Name = "Name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [DataMember(Name = "EmailId")]
-        public string EmailId { get; set; }
+        public string? EmailId { get; set; }
 
         [DataMember(Name = "Mobile")]
-        public string Mobile { get; set; }
+        public string? Mobile { get; set; }
 
         [DataMember(Name = "Address")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [DataMember(Name = "IsActive")]
         public bool IsActive { get; set; }

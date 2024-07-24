@@ -1,11 +1,10 @@
 ﻿using Dapper.Application.Interfaces;
 using Dapper.Core.Entities;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dapper.Infrastructure.Repositories
